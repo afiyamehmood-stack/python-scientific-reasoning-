@@ -14,6 +14,11 @@ class TestFallingObject(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_distance(-1)
 
+    def test_correct_physics_formula(self):
+        result = calculate_distance(2)
+        expected = 19.62
+        self.assertAlmostEqual(result, expected, places=2)
+
 
 if __name__ == "__main__":
     unittest.main()
