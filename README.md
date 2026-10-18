@@ -55,3 +55,13 @@ For a falling time of 2 seconds, the calculated distance is **19.62 metres**.
 ## Learning Goals
 
 This project demonstrates basic Python functions, input validation, physics calculations, exception handling, and automated unit testing.
+
+## Test Results
+
+The project has been tested using Python's built-in `unittest` framework.
+
+- **Total tests:** 3
+- **Result:** All tests passed
+- **Command:** `python -m unittest test_falling_object.py`
+
+The tests cover normal input, zero time, and negative time validation.
