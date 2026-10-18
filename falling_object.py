@@ -1,15 +1,23 @@
-# Falling Object Calculator
-# Calculates the distance an object falls under gravity.
-# Assumes the object starts from rest and ignores air resistance.
-
 GRAVITY = 9.81  # metres per second squared
 
-time = float(input("Enter falling time in seconds: "))
 
-if time < 0:
-    print("Error: Time cannot be negative.")
-else:
-    distance = 0.5 * GRAVITY * time ** 2
+def calculate_distance(time):
+    """Calculate distance fallen from rest, ignoring air resistance."""
+    if time < 0:
+        raise ValueError("Time cannot be negative.")
+    return 0.5 * GRAVITY * time ** 2
 
-    print(f"Time: {time} seconds")
-    print(f"Distance fallen: {distance:.2f} metres")
+
+def main():
+    time = float(input("Enter falling time in seconds: "))
+
+    try:
+        distance = calculate_distance(time)
+        print(f"Time: {time} seconds")
+        print(f"Distance fallen: {distance:.2f} metres")
+    except ValueError as error:
+        print(f"Error: {error}")
+
+
+if __name__ == "__main__":
+    main()
